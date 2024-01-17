@@ -1,0 +1,112 @@
+﻿                FUNDAMENTOS COMPUTACIONALES
+                                   PROYECTO
+1. Analisis
+
+
+EntradaProcesoSalida>Ingresar Horario de buses
+>Ingresar Datos de rutas
+>Ingresar parada de buses>Generar horario de buses
+>Generar ruta de cada bus
+>Generar paradas de bus
+Optimizar rutas, parada y horario de bus
+>Generar interfaz de usuario mostrando rutas y horarios>Mostrar horario de salida de bus
+>Mostrar ruta con ubicación de parada
+>Mostrar al usuario información de horarios, rutas y paradas de bus
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. Pseudocodigo
+
+
+Algoritmo sistemaAutobuses
+	Escribir "Que desea realizar"
+	Escribir "  [1] Mostrar rutas disponibles"
+        Escribir "  [2] Mostrar horarios de las rutas"
+        Escribir "  [3] Gestion de rutas"
+        Escribir "  [4] Salir"
+        Leer opcion
+
+        Segun opcion Hacer
+            opcion 1:
+		Dimensionar NombParada[3]
+		llenarArregloNombParadas(NombParada)
+		presentarArreglo(NombParada)
+            opcion 2:
+                Dimensionar NombParada[3]
+		llenarArregloNombParadas(NombParada)
+		presentarArreglo(NombParada)
+		Dimensionar NombUbic[3]
+		llenarArregloUbic(NombUbic)
+		presentarArreglo(NombUbic)
+            opcion 3:
+
+            opcion 4:
+                Escribir "Saliendo de la calculadora"
+            De otro modo: 
+                Escribir "Opción no válida"
+        Fin Segun
+
+
+	Dimensionar NombParada[3]
+	llenarArregloNombParadas(NombParada)
+	presentarArreglo(NombParada)
+	Dimensionar NombUbic[3]
+	llenarArregloUbic(NombUbic)
+	presentarArreglo(NombUbic)
+	Dimensionar hora[3]
+	llenarArregloHorario(hora)
+	presentarArreglo(hora)
+
+FinAlgoritmo
+SubProceso llenarArregloNomb(NombParada)
+	Dimension nomb[3]
+	nomb[0]="Z Hipervalle, Calasanz, Solca, La Paz, Pitas, Terminal Terrestre, Zona Militar y La Urna";nomb[1]=": Argentina y Pío Jaramillo, San Pedro, Tebaida Alta, Lauro Guerrero y La Urna";nomb[2]="Puerta de la Ciudad, José A. Eguiguren, Lauro Guerrero y Azuay";
+	Para i=0 Hasta 3 Con paso 1 Hacer 
+		NombParada[i]=nomb[Aletorio(0,2)]
+	FinPara
+FinSubProceso
+SubProceso presentarArreglo(NombParada)
+	Para i=0 Hasta 3 Con paso 1 Hacer
+		Escribir user[i]
+	Fin Para
+Fin SubPoreceso
+
+SubProceso llenarArregloUbic(NombUbic)
+	Dimension[3]
+	nomb[0]="19°25'42'' N y 99°7'66'' O";nomb[0]="34°36'47'' S y 58°22'63'' O";nomb[0]="41°54'10'' N y 12°27'20'' E";
+	Para i=0 Hasta 3 Con paso 1 Hacer
+		NombUbic[i]=nomb[Aletorio(0,2)]
+	FinPara
+FinSubProceso
+
+SubProceso presentarArreglo(NombUbic)
+	Para i=0 Hasta 3 Con paso 1 Hacer
+		Escribir user[i]
+	Fin Para
+Fin SubPoreceso
+
+SubProceso llenarArregloHorario(Horario)
+	Dimension[3]
+	nomb[0]="7:00";nomb[0]="8:30";nomb[0]="14:30";
+	Para i=0 Hasta 3 Con paso 1 Hacer
+		NombUbic[i]=nomb[Aletorio(0,2)]
+	FinPara
+FinSubProceso
+
+SubProceso presentarArreglo(hora)
+	Para i=0 Hasta 3 Con paso 1 Hacer
+		Escribir user[i]
+	Fin Para
+Fin SubPoreceso
