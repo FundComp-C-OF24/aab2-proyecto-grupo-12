@@ -1,0 +1,238 @@
+// Definición de matrices
+Matriz matrizNombres = {
+    {"07:05", "07:45", "Ruta Tebaida Alta"},
+    {"08:05", "08:45", "Ruta Las Pitas"},
+    {"12:05", "12:45", "Ruta Puerta de la ciudad"},
+    {"13:05", "13:45", "Ruta Estadio"},
+    {"14:05", "14:45", "La Paz"}
+};
+
+Matriz Ruta1 = {
+    {"Argentina Y Pio Jaramillo", "3,65519° 6,18611°"},
+    {"San Pedro", "4,986875° 5,464861°"},
+    {"Tebaida Baja", "6,89416° 2,64963°"},
+    {"Tebaida Alta", "3,694461° 2,164954°"},
+    {"Lauro Guerrero", "5,159233° 3,94961°"},
+    {"La Urna", "4,266791° 2,48646°"}
+};
+
+Matriz Ruta2 = {
+    {"Hipervalle", "5,96616° 2,26762°"},
+    {"Calasaz", "3,15646° 3,488515°"},
+    {"Solca", "7,1546° 3,26796°"},
+    {"La Paz", "2,16463° 3,39456°"},
+    {"Las Pitas", "5,57155° 3,154616°"},
+    {"Terminal Terrestre", "4,159463° 3,23256°"}
+};
+
+Matriz Ruta3 = {
+    {"Puerta de la Cuidad", "3,94161° 2,8712°"},
+    {"Simon Bolivar", "3,4555° 3,1466°"},
+    {"Jose A. Eguiguren", "2,28496° 2,1856°"},
+    {"Mercadillo", "2,211876° 3,1846°"},
+    {"Lauro Guerrero Y Azuay", "5,5523° 3,2966°"},
+    {"La Urna", "5,4963° 3,1461°"}
+};
+
+Matriz Ruta4 = {
+    {"Satiago de la Montañas", "5,89623° 2,1683°"},
+    {"Emiliano Ortega", "3,0546° 3,1864°"},
+    {"Jose A. Eguiguren", "2,1546° 3,1463°"},
+    {"Miguel Riofrio", "6,1546 2,5463°"},
+    {"Estadio", "5,1566° 3,1215°"},
+    {"24 de Mayo", "3,4643° 1,1646°"}
+};
+
+Matriz Ruta5 = {
+    {"Hipervalle", "5,96616° 2,26762°"},
+    {"Calasanz", "3,15646° 3,488515°"},
+    {"Solca", "7,1546° 3,26796°"},
+    {"La Paz", "2,16463° 3,39456°"},
+    {"Las Pitas", "5,57155° 3,154616°"},
+    {"Terminal Terrestre", "4,159463° 3,23256°"}
+};
+
+// Función principal
+Función principal():
+    // Inicialización de matrices
+    matrizP1 = PersonasRuta1()
+    matrizP2 = PersonasRuta2()
+    matrizP3 = PersonasRuta3()
+    matrizP4 = PersonasRuta4()
+    matrizP5 = PersonasRuta5()
+
+    analisisP1 = analizarPersonas(matrizP1)
+    analisisP2 = analizarPersonas(matrizP2)
+    analisisP3 = analizarPersonas(matrizP3)
+    analisisP4 = analizarPersonas(matrizP4)
+    analisisP5 = analizarPersonas(matrizP5)
+
+    // Menú principal
+    mientras (Verdadero):
+        Imprimir("¿Qué desea realizar?")
+        Imprimir("[1] Mostrar rutas disponibles")
+        Imprimir("[2] Mostrar ubicacion de las rutas")
+        Imprimir("[3] Gestion de rutas")
+        Imprimir("[4] Salir")
+
+        opcion = LeerEntero()
+
+        seleccionar (opcion):
+            caso 1:
+                Imprimir("------------------------Rutas Disponibles----------------------------")
+                ImprimirMatriz(matrizNombres)
+                romper
+
+            caso 2:
+                Imprimir("Por favor ingrese el nombre de la ruta que desea consultar: ")
+                respuesta = LeerCadena()
+                seleccionar (respuesta):
+                    caso "Tebaida Alta":
+                        ImprimirMatriz(Ruta1)
+                    caso "Las Pitas":
+                        ImprimirMatriz(Ruta2)
+                    caso "Puerta de la ciudad":
+                        ImprimirMatriz(Ruta3)
+                    caso "Estadio":
+                        ImprimirMatriz(Ruta4)
+                    caso "La Paz":
+                        ImprimirMatriz(Ruta5)
+                    defecto:
+                        romper
+                romper
+
+            caso 3:
+                Imprimir("Por favor ingrese el nombre de la ruta que desea consultar: ")
+                respuesta3 = LeerCadena()
+                seleccionar (respuesta3):
+                    caso "Tebaida Alta":
+                        Imprimir("-------------Parada---------------Personas recogidas-------------")
+                        ImprimirMatriz(matrizP1)
+                        Imprimir("------------------------Recomendaciones----------------------------")
+                        ImprimirMatriz(analisisP1)
+                    caso "Las Pitas":
+                        Imprimir("-------------Parada---------------Personas recogidas-------------")
+                        ImprimirMatriz(matrizP2)
+                        Imprimir("------------------------Recomendaciones----------------------------")
+                        ImprimirMatriz(analisisP2)
+                    caso "Puerta de la ciudad":
+                        Imprimir("-------------Parada---------------Personas recogidas-------------")
+                        ImprimirMatriz(matrizP3)
+                        Imprimir("------------------------Recomendaciones----------------------------")
+                        ImprimirMatriz(analisisP3)
+                    caso "Estadio":
+                        Imprimir("-------------Parada---------------Personas recogidas-------------")
+                        ImprimirMatriz(matrizP4)
+                        Imprimir("------------------------Recomendaciones----------------------------")
+                        ImprimirMatriz(analisisP4)
+                    caso "La Paz":
+                        Imprimir("-------------Parada---------------Personas recogidas-------------")
+                        ImprimirMatriz(matrizP5)
+                        Imprimir("------------------------Recomendaciones----------------------------")
+                        ImprimirMatriz(analisisP5)
+                    defecto:
+                        romper
+                romper
+
+            caso 4:
+                Imprimir("Saliendo del sistema de autobuses")
+                romper
+
+            defecto:
+                Imprimir("Opción no válida")
+                romper
+Fin Funcion Principal
+// Función para generar matriz de personas para cada ruta
+Función PersonasRuta1() -> Matriz:
+    matriz = CrearMatriz(6, 2)
+    matriz[0][0] = "Argentina y Pio Jaramillo"
+    matriz[1][0] = "San Pedro"
+    matriz[2][0] = "Tebaida Baja"
+    matriz[3][0] = "Tebaida Alta"
+    matriz[4][0] = "Lauro Guerrero"
+    matriz[5][0] = "La Urna"
+    Para cada fila en matriz:
+        numeroAleatorio = GenerarNumeroAleatorioEntre(5, 50)
+        matriz[fila][1] = ConvertirAString(numeroAleatorio)
+    Devolver matriz
+Fin Funcion
+// Función para generar matriz de personas para la Ruta 2
+Función PersonasRuta2() -> Matriz:
+    matriz = CrearMatriz(6, 2)
+    matriz[0][0] = "Hipervalle"
+    matriz[1][0] = "Calasanz"
+    matriz[2][0] = "Solca"
+    matriz[3][0] = "La Paz"
+    matriz[4][0] = "Las Pitas"
+    matriz[5][0] = "Terminal Terrestre"
+    Para cada fila en matriz:
+        numeroAleatorio = GenerarNumeroAleatorioEntre(5, 50)
+        matriz[fila][1] = ConvertirAString(numeroAleatorio)
+    Devolver matriz
+Fin Funcion
+// Función para generar matriz de personas para la Ruta 3
+Función PersonasRuta3() -> Matriz:
+    matriz = CrearMatriz(6, 2)
+    matriz[0][0] = "Puerta de la Ciudad"
+    matriz[1][0] = "Simon Bolivar"
+    matriz[2][0] = "Jose A.Eguiguren"
+    matriz[3][0] = "Mercadillo"
+    matriz[4][0] = "Lauro Guerrero y Azuay"
+    matriz[5][0] = "La Urna"
+    Para cada fila en matriz:
+        numeroAleatorio = GenerarNumeroAleatorioEntre(5, 50)
+        matriz[fila][1] = ConvertirAString(numeroAleatorio)
+    Devolver matriz
+Fin Funcion
+// Función para generar matriz de personas para la Ruta 4
+Función PersonasRuta4() -> Matriz:
+    matriz = CrearMatriz(6, 2)
+    matriz[0][0] = "Santiago de las Montañas"
+    matriz[1][0] = "Emiliano Ortega"
+    matriz[2][0] = "Jose A. Eguiguren"
+    matriz[3][0] = "Miguel Riofrio"
+    matriz[4][0] = "Estadio"
+    matriz[5][0] = "24 de Mayo"
+    Para cada fila en matriz:
+        numeroAleatorio = GenerarNumeroAleatorioEntre(5, 50)
+        matriz[fila][1] = ConvertirAString(numeroAleatorio)
+    Devolver matriz
+Fin Funcion
+// Función para generar matriz de personas para la Ruta 5
+Función PersonasRuta5() -> Matriz:
+    matriz = CrearMatriz(6, 2)
+    matriz[0][0] = "Hipervalle"
+    matriz[1][0] = "Calasanz"
+    matriz[2][0] = "Solca"
+    matriz[3][0] = "La Paz"
+    matriz[4][0] = "Las Pitas"
+    matriz[5][0] = "Terminal Terrestre"
+    Para cada fila en matriz:
+        numeroAleatorio = GenerarNumeroAleatorioEntre(5, 50)
+        matriz[fila][1] = ConvertirAString(numeroAleatorio)
+    Devolver matriz
+Fin Funcion
+
+// Función para analizar personas recogidas en cada parada
+Función analizarPersonas(Matriz matriz) -> Matriz:
+    resultados = CrearMatriz(tamaño(matriz), 2)
+    Para cada fila en matriz:
+        numeroPersonas = ConvertirAEntero(matriz[fila][1])
+        resultados[fila][0] = matriz[fila][0]
+        seleccionar:
+            caso (numeroPersonas < 15):
+                resultados[fila][1] = "Se recomienda eliminar esta parada por insuficiencia de pasajeros"
+            caso (numeroPersonas >= 15 y numeroPersonas <= 40):
+                resultados[fila][1] = "Se abastece correctamente la parada"
+            caso contrario:
+                resultados[fila][1] = "Se recomienda enviar otra línea de bus a la parada"
+    Devolver resultados
+Fin Funcion
+
+// Función para imprimir una matriz
+Función ImprimirMatriz(Matriz matriz):
+    Para cada fila en matriz:
+        Para cada elemento en fila:
+            Imprimir(elemento + " | ")
+        ImprimirNuevaLinea()
+Fin Funcion
